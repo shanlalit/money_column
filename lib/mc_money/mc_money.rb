@@ -22,6 +22,10 @@ class McMoney
     o = other.to_money
     McMoney.new(value + o.value, :decimal_places => [decimal_places, o.decimal_places].max)
   end
+  
+  def -@
+    McMoney.new(value * -1, :decimal_places => decimal_places)
+  end
 
   def -(other)
     o = other.to_money

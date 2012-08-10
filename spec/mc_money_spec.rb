@@ -41,7 +41,9 @@ describe McMoney do
   it "should be able to add $0 + $0" do
     (McMoney.new + McMoney.new).should == McMoney.new
   end
-
+  it "should work with negative" do
+    (-McMoney.new("500")).should == McMoney.new(-500)
+  end
   it "should be subtractable" do
     (McMoney.new(5.00) - McMoney.new(3.49)).should == McMoney.new(1.51)
   end
